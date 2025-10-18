@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 85% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 53% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 0 85% 50%;
+
+    --radius: 0rem;
+    
+    /* Grunge colors */
+    --grunge-black: 0 0% 8%;
+    --grunge-red: 0 53% 55%;
+    --grunge-gray: 0 0% 40%;
+    --grunge-light: 0 0% 98%;
+    --grunge-concrete: 0 0% 60%;
+    
+    /* Custom shadows */
+    --shadow-editorial: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-dramatic: 0 8px 32px rgba(0, 0, 0, 0.18);
+    --shadow-grunge: 4px 4px 0px hsl(var(--grunge-black) / 0.12);
+    --shadow-sticker: 2px 2px 8px hsl(var(--grunge-black) / 0.08);
+    --shadow-ticket: 0 2px 8px hsl(var(--grunge-black) / 0.12);
+    --shadow-neon: 0 0 30px hsl(var(--grunge-red) / 0.3);
+    
+    /* Gradients */
+    --gradient-grunge: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    --gradient-red: linear-gradient(135deg, hsl(var(--grunge-red)), hsl(0 75% 40%));
+    --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    
+    /* Fonts */
+    --font-grunge: 'Permanent Marker', cursive;
+    --font-bold: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 85% 55%;
+    
+    --grunge-black: 0 0% 95%;
+    --grunge-red: 0 53% 55%;
+    --grunge-gray: 0 0% 70%;
+    --grunge-light: 0 0% 12%;
+    --grunge-concrete: 0 0% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bold);
+  }
+}
+
+@layer utilities {
+  .font-grunge {
+    font-family: var(--font-grunge);
+  }
+  
+  .font-bold-display {
+    font-family: var(--font-bold);
+  }
+  
+  .text-grunge-black {
+    color: hsl(var(--grunge-black));
+  }
+  
+  .text-grunge-red {
+    color: hsl(var(--grunge-red));
+  }
+  
+  .text-grunge-gray {
+    color: hsl(var(--grunge-gray));
+  }
+  
+  .bg-grunge-black {
+    background-color: hsl(var(--grunge-black));
+  }
+  
+  .bg-grunge-red {
+    background-color: hsl(var(--grunge-red));
+  }
+  
+  .bg-grunge-light {
+    background-color: hsl(var(--grunge-light));
+  }
+  
+  .shadow-editorial {
+    box-shadow: var(--shadow-editorial);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-dramatic {
+    box-shadow: var(--shadow-dramatic);
+  }
+  
+  .shadow-grunge {
+    box-shadow: var(--shadow-grunge);
+  }
+  
+  .shadow-sticker {
+    box-shadow: var(--shadow-sticker);
+  }
+  
+  .shadow-ticket {
+    box-shadow: var(--shadow-ticket);
+  }
+  
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .gradient-grunge {
+    background: var(--gradient-grunge);
+  }
+  
+  .gradient-red {
+    background: var(--gradient-red);
+  }
+  
+  .grunge-border {
+    border: 3px solid hsl(var(--grunge-black));
+    position: relative;
+  }
+  
+  .grunge-border::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 3px solid hsl(var(--grunge-black));
+    transform: rotate(-1deg);
+    z-index: -1;
+  }
+  
+  .ticket-punch {
+    position: relative;
+  }
+  
+  .ticket-punch::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, transparent 40%, hsl(var(--grunge-black)) 40%);
+    background-size: 10px 10px;
+  }
+}
